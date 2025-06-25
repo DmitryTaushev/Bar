@@ -25,12 +25,15 @@
                 </div>
                 <div class="col-sm-4 offset-md-1 py-4">
                     <h4 class="text-white">Меню</h4>
+                    {% if user.role == 'admin' %}
+                        <a class="p-2 btn btn-success" href="/admin/">Админка</a>
+                        {% endif %}
                     <ul class="list-unstyled">
                         <li><a href="{% url 'drinks:index' %}" class="text-white">Главная</a></li>
                         <li><a href="{% url 'drinks:types' %}" class="text-white">Напитки</a></li>
                         <li><a href="{% url 'dishes:dishes' %}" class="text-white">Блюда</a></li>
                         {% if user.is_authenticated %}
-                            <li><a href="{% url 'users:user_login' %}" class="text-white">Профиль</a></li>
+                            <li><a href="{% url 'users:user_profile' %}" class="text-white">Профиль</a></li>
                             <li><a href="{% url 'users:user_register' %}" class="text-white">Выход</a></li>
                         {% else %}
                             <li><a href="{% url 'users:user_login' %}" class="text-white">Вход</a></li>
@@ -52,6 +55,11 @@
                     <circle cx="12" cy="13" r="4"></circle>
                 </svg>
                 <strong>КрепкоеХмельное</strong>
+            </a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'users:user_profile' %}" class="navbar-brand d-flex">
+                <span>Пользователь:&nbsp;</span><span class="text-muted"> {{ user }}</span>
+                {% endif %}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
                     aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
