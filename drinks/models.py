@@ -4,6 +4,7 @@ from users.models import NULLABLE
 class Type(models.Model):
     name = models.CharField(max_length=100,verbose_name='alco')
     description = models.CharField(max_length=1000, verbose_name='description')
+    photo = models.ImageField(upload_to='drinks/', **NULLABLE, verbose_name='image')
 
     def __str__(self):
         return f'{self.name}'

@@ -18,8 +18,8 @@ def type_list_view(request):
 def type_drink_list_view(request,pk:int):
     type_object = Type.objects.get(pk=pk)
     context = {
-        'objects_list': Drink.objects.filter(type_id = pk),
-        'title':f'Собаки породы - {type_object.name}',
+        'objects_list': Drink.objects.filter(alco_id = pk),
+        'title':f'{type_object.name}',
         'type_pk': type_object.pk
     }
     return render(request, 'drinks/drinks.html',context=context)
