@@ -4,7 +4,7 @@ from drinks.models import Type, Drink
 def index_view(request):
     context = {
         'objects_list':Type.objects.all()[:2],
-        'title': 'Крепкое - Хмельное'
+        'title': 'КрепкоеХмельное'
     }
     return render(request, 'drinks/index.html',context = context)
 
