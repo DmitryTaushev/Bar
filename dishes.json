@@ -1,0 +1,11 @@
+[
+  {
+    "model": "dishes.dish",
+    "pk": 1,
+    "fields": {
+      "name": "Гренки",
+      "photo": "dishes/grenki.jpg",
+      "description": "С чесноком и сырным соусом"
+    }
+  }
+]

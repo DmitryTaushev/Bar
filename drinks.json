@@ -1,0 +1,38 @@
+[
+  {
+    "model": "drinks.type",
+    "pk": 1,
+    "fields": {
+      "name": "Алкогольные",
+      "description": "Напитки с содержанием алкоголя",
+      "photo": "drinks/alco.jpg"
+    }
+  },
+  {
+    "model": "drinks.type",
+    "pk": 2,
+    "fields": {
+      "name": "Безалкогольные",
+      "description": "Напитки без содержания алкоголя",
+      "photo": "drinks/nonalco.jfif"
+    }
+  },
+  {
+    "model": "drinks.drink",
+    "pk": 1,
+    "fields": {
+      "name": "Мохито",
+      "alco": 1,
+      "photo": "drinks/Bacardi_shooting_5_800.jpg"
+    }
+  },
+  {
+    "model": "drinks.drink",
+    "pk": 2,
+    "fields": {
+      "name": "Апельсиновый сок",
+      "alco": 2,
+      "photo": "drinks/orange.png"
+    }
+  }
+]
