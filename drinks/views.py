@@ -23,3 +23,4 @@ def type_drink_list_view(request,pk:int):
         'type_pk': type_object.pk
     }
     return render(request, 'drinks/drinks.html',context=context)
+
