@@ -22,5 +22,5 @@ class Drink(models.Model):
         return f'{self.name} ({self.alco})'
 
     class Meta:
-        verbose_name = 'name'
-        verbose_name_plural = 'names'
+        verbose_name = 'drink'
+        verbose_name_plural = 'drinks'
