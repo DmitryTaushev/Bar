@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+from drinks.models import Type, Drink
+def index_view(request):
+    context = {
+        'objects_list':Type.objects.all()[:3],
+        'title': 'Крепкое - Хмельное'
+    }
+    return render(request, 'drinks/index.html',context = context)
