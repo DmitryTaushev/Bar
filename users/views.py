@@ -9,7 +9,7 @@ from django.views.generic import CreateView, UpdateView
 from django.urls import reverse_lazy
 
 from users.models import User
-from users.forms import UserRegisterForm, UserLoginForm
+from users.forms import UserRegisterForm, UserLoginForm, UserForm
 
 
 class UserRegisterView(CreateView):
@@ -28,18 +28,20 @@ class UserLoginView(LoginView):
         'title':'Вход в аккаунт'
     }
 
+class UserProfileView(UpdateView):
+    model = User
+    form_class = UserForm
+    template_name = 'users/user_profile.html'
+
+    def get_object(self,queryset=None):
+        return self.request.user
+
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data()
+        context_data['title'] = f'Ваш профиль {self.get_object()}'
+        return context_data
 
 
-def user_profile_view(request):
-    user_object = request.user
-    if user_object.first_name and user_object.last_name:
-        user_name = user_object.first_name + ' ' + user_object.last_name
-    else:
-        user_name = user_object
-    context = {
-        'title': f'Ваш профиль {user_name}'
-    }
-    return render(request, 'users/user_profile.html', context=context)
 
 
 def user_logout_view(request):
