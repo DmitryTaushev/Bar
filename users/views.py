@@ -15,6 +15,7 @@ from users.models import User
 from users.forms import UserRegisterForm, UserLoginForm, UserForm, UserUpdateForm, UserPasswordChangeForm
 from users.services import send_register_email, send_new_password
 
+
 class UserRegisterView(CreateView):
     model = User
     form_class = UserRegisterForm
@@ -73,9 +74,13 @@ class UserPasswordChangeView(PasswordChangeView):
         return context_data
 
 
-def user_logout_view(request):
-    logout(request)
-    return redirect('drinks:index')
+class UserLogoutView(LogoutView):
+    template_name = 'users/user_logout.html'
+    extra_context = {
+        'title': 'Выход из аккаунта'
+    }
+    pass
+
 
 @login_required(login_url='users:user_login')
 def user_generate_new_password_view(request):
