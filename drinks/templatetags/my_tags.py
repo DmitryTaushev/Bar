@@ -13,3 +13,9 @@ def user_media(val):
     if val:
         return f'/media/{val}'
     return '/static/noavatar.png'
+
+@register.filter()
+def dish_media(val):
+    if val:
+        return f'/media/{val}'
+    return '/static/noavatar.png'

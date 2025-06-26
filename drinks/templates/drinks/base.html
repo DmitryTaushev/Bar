@@ -27,7 +27,7 @@
                     {% endif %}
                     <ul class="list-unstyled">
                         <li><a href="{% url 'drinks:index' %}" class="text-white">Главная</a></li>
-                        <li><a href="{% url 'drinks:types' %}" class="text-white">Напитки</a></li>
+                        <li><a href="{% url 'drinks:drink_list' %}" class="text-white">Напитки</a></li>
                         <li><a href="{% url 'dishes:dishes' %}" class="text-white">Блюда</a></li>
                         {% if user.is_authenticated %}
                         <li><a href="{% url 'users:user_profile' %}" class="text-white">Профиль</a></li>
