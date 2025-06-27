@@ -1,0 +1,16 @@
+{% extends 'menu/base.html' %}
+{% load my_tags %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        {% for object in object_list %}
+        {% include 'menu/includes/inc_drinkanddish.html' with object=object %}
+        {% endfor %}
+    </div>
+
+
+
+</div>
+
+{% endblock %}

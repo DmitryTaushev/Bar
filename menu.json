@@ -1,0 +1,65 @@
+[
+  {
+    "model": "menu.category",
+    "pk": 1,
+    "fields": {
+      "name": "Алкогольные напитки",
+      "description": "Напитки с содержанием алкоголя",
+      "photo": "drinks/alco_OIXDuWP.jpg"
+    }
+  },
+  {
+    "model": "menu.category",
+    "pk": 2,
+    "fields": {
+      "name": "Безалкогольные напитки",
+      "description": "Напитки без содержания алкоголя",
+      "photo": "drinks/nonalco_zMLWfU5.jfif"
+    }
+  },
+  {
+    "model": "menu.category",
+    "pk": 3,
+    "fields": {
+      "name": "Блюда",
+      "description": "Различные закуски и блюда",
+      "photo": "drinks/dishes_ReVHPpq.jpg"
+    }
+  },
+  {
+    "model": "menu.drinkanddish",
+    "pk": 1,
+    "fields": {
+      "name": "Мохито",
+      "category": 1,
+      "photo": "drinks/Bacardi_shooting_5_800_Ap5tqwv.jpg"
+    }
+  },
+  {
+    "model": "menu.drinkanddish",
+    "pk": 2,
+    "fields": {
+      "name": "Апельсиновый сок",
+      "category": 2,
+      "photo": "drinks/orange_u3zwx5V.png"
+    }
+  },
+  {
+    "model": "menu.drinkanddish",
+    "pk": 3,
+    "fields": {
+      "name": "Гренки",
+      "category": 3,
+      "photo": "drinks/grenki_zOtfXFn.jpg"
+    }
+  },
+  {
+    "model": "menu.drinkanddish",
+    "pk": 4,
+    "fields": {
+      "name": "Сырная тарелка",
+      "category": 3,
+      "photo": "drinks/cheese_4Zmr4ze.jpg"
+    }
+  }
+]

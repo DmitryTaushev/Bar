@@ -44,8 +44,7 @@ INSTALLED_APPS = [
 
     # project apps
     'users',
-    'drinks',
-    'dishes'
+    'menu'
 ]
 
 MIDDLEWARE = [
@@ -160,6 +159,6 @@ EMAIL_SERVER = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 EMAIL_ADMIN = EMAIL_HOST_USER
 
-LOGIN_REDIRECT_URL = 'drinks:index'
+LOGIN_REDIRECT_URL = 'menu:index'
 
 LOGIN_URL = '/users/'
