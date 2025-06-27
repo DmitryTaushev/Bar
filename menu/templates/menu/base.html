@@ -28,7 +28,9 @@
                     <ul class="list-unstyled">
                         <li><a href="{% url 'menu:index' %}" class="text-white">Главная</a></li>
                         <li><a href="{% url 'menu:all' %}" class="text-white">Ассортимент</a></li>
-
+                          {% if user.role == 'admin' %}
+                        <li><a href="{% url 'menu:create' %}" class="text-white">Добавить</a></li>
+                          {% endif %}
 
 
 

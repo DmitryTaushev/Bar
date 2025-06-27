@@ -10,7 +10,7 @@ from django.core.exceptions import PermissionDenied
 from django.db.models import Q
 
 from menu.models import Category, DrinkAndDish
-from menu.forms import CategoryForm
+from menu.forms import CategoryForm,DrinkAndDishForm
 from users.models import UserRoles
 
 def index_view(request):
@@ -45,3 +45,11 @@ class DrinkAndDishListView(LoginRequiredMixin, ListView):
         'title': 'Ассортимент'
     }
 
+class DrinkAndDishCreateView(LoginRequiredMixin, CreateView):
+    model = DrinkAndDish
+    form_class = DrinkAndDishForm
+    template_name = 'menu/create.html'
+    extra_context = {
+        'title': 'Добавить напиток или блюдо'
+    }
+    success_url = reverse_lazy('menu:all')

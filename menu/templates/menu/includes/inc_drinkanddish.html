@@ -8,10 +8,8 @@
              src="{{ object.photo|drink_media }}" width="300" height="320"
              alt="Card image cap">
         <div class="card-body">
-            <h5 class="card-title pricing-card-title">{{ object.name }}</h5>
-            <ul class="list-unstyled mt-3 mb-4 text-start m-3">
-                <li>Дата рождения: {{ object.alco|default:'неизвестно' }}</li>
-            </ul>
+            <h5 class="card-title pricing-card-title">Цена: {{ object.price }} руб.</h5>
+
 
         </div>
     </div>

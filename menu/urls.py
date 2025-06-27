@@ -3,7 +3,7 @@ from menu.apps import MenuConfig
 from django.views.decorators.cache import cache_page, never_cache
 
 from menu.models import DrinkAndDish
-from menu.views import index_view,CategoryListView,DrinkAndDishCategoryListView,DrinkAndDishListView
+from menu.views import index_view,CategoryListView,DrinkAndDishCategoryListView,DrinkAndDishListView,DrinkAndDishCreateView
 
 app_name = MenuConfig.name
 
@@ -14,7 +14,8 @@ urlpatterns = [
     # menu
 
     path('category/<int:pk>/', DrinkAndDishCategoryListView.as_view(), name='categories_drinksanddishes'),
-    path('drinkanddishes/',DrinkAndDishListView.as_view(),name='all')
+    path('drinkanddishes/',DrinkAndDishListView.as_view(),name='all'),
+    path('create/',DrinkAndDishCreateView.as_view(),name='create')
 
 
     # path('dogs/', DogListView.as_view(), name='dogs_list'),
