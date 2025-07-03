@@ -18,6 +18,7 @@ def index_view(request):
         'object_list': Category.objects.all(),
         'title': 'КрепкоеХмельное-Ассортимент'
     }
+
     return render(request, 'menu/index.html', context=context)
 
 class CategoryListView(ListView):
@@ -26,6 +27,7 @@ class CategoryListView(ListView):
         'title': 'Ассортимент'
     }
     template_name = 'menu/category.html'
+    paginate_by = 3
 
 class DrinkAndDishCategoryListView(LoginRequiredMixin, ListView):
     model = DrinkAndDish
@@ -44,6 +46,7 @@ class DrinkAndDishListView(LoginRequiredMixin, ListView):
     extra_context = {
         'title': 'Ассортимент'
     }
+    paginate_by = 3
 
 class DrinkAndDishCreateView(LoginRequiredMixin, CreateView):
     model = DrinkAndDish
