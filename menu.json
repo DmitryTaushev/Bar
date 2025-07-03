@@ -32,7 +32,8 @@
     "fields": {
       "name": "Мохито",
       "category": 1,
-      "photo": "drinks/Bacardi_shooting_5_800_Ap5tqwv.jpg"
+      "photo": "drinks/Bacardi_shooting_5_800_Ap5tqwv.jpg",
+      "price": 500
     }
   },
   {
@@ -41,7 +42,8 @@
     "fields": {
       "name": "Апельсиновый сок",
       "category": 2,
-      "photo": "drinks/orange_u3zwx5V.png"
+      "photo": "drinks/orange_u3zwx5V.png",
+      "price": 250
     }
   },
   {
@@ -50,7 +52,8 @@
     "fields": {
       "name": "Гренки",
       "category": 3,
-      "photo": "drinks/grenki_zOtfXFn.jpg"
+      "photo": "drinks/grenki_zOtfXFn.jpg",
+      "price": 300
     }
   },
   {
@@ -59,7 +62,8 @@
     "fields": {
       "name": "Сырная тарелка",
       "category": 3,
-      "photo": "drinks/cheese_4Zmr4ze.jpg"
+      "photo": "drinks/cheese_4Zmr4ze.jpg",
+      "price": 500
     }
   }
 ]
