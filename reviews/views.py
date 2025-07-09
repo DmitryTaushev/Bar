@@ -9,6 +9,8 @@ from reviews.models import Review
 from users.models import User,UserRoles
 from reviews.forms import ReviewAdminForm
 
+from reviews.utils import slug_generator
+
 
 class ReviewListView(ListView):
     model = Review
@@ -40,6 +42,18 @@ class ReviewCreateView(LoginRequiredMixin,CreateView):
     extra_context = {
         'title': 'Добавить отзыв'
     }
+
+    def form_valid(self, form):
+        if self.request.user.role not in [UserRoles.USER, UserRoles.ADMIN]:
+            return HttpResponseForbidden
+        slug_object = form.save()
+        print(slug_object.slug)
+        if slug_object.slug == 'temp_slug':
+            slug_object.slug = slug_generator()
+            print(slug_object.slug)
+        slug_object.author = self.request.user
+        slug_object.save()
+        return super().form_valid(form)
 
 class ReviewDetailView(DetailView):
     model = Review
