@@ -18,6 +18,7 @@ class ReviewListView(ListView):
         'title':'Все отзывы'
     }
     template_name = 'reviews/reviews.html'
+    paginate_by = 3
 
     def get_queryset(self):
         queryset = super().get_queryset().filter(sign_of_review=True)
@@ -30,6 +31,7 @@ class ReviewDeactivatedListView(ListView):
         'title':'Деактивированные отзывы'
     }
     template_name = 'reviews/reviews.html'
+    paginate_by = 3
 
     def get_queryset(self):
         queryset = super().get_queryset().filter(sign_of_review=False)

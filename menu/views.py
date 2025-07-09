@@ -56,3 +56,18 @@ class DrinkAndDishCreateView(LoginRequiredMixin, CreateView):
         'title': 'Добавить напиток или блюдо'
     }
     success_url = reverse_lazy('menu:all')
+
+class SearchAllListView(LoginRequiredMixin,ListView):
+    model = DrinkAndDish
+    template_name = 'menu/all_search_result.html'
+    extra_context = {
+        'title':'Результаты поискового запроса'
+    }
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+
+        drinkanddish_object_list = DrinkAndDish.objects.filter(
+            Q(name__icontains=query)
+        )
+        object_list =list(drinkanddish_object_list)
+        return object_list

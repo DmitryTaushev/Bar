@@ -46,6 +46,7 @@
                         <li><a href="{% url 'users:user_login' %}" class="text-white">Вход</a></li>
                         <li><a href="{% url 'users:user_register' %}" class="text-white">Регистрация</a></li>
                         {% endif %}
+                        {% include 'menu/includes/inc_search_field.html' %}
 
 
                     </ul>

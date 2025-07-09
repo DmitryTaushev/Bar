@@ -1,14 +1,13 @@
 {% extends 'menu/base.html' %}
 {% load my_tags %}
 {% block content %}
-
+{% include 'menu/includes/inc_search_field.html' %}
 <div class="container">
     <div class="row">
         {% for object in object_list %}
-        {% include 'users/includes/inc_user_card.html' with object=object %}
+        {% include 'menu/includes/inc_drinkanddish.html' with object=object %}
         {% endfor %}
     </div>
-{% include 'menu/includes/inc_pagination.html' %}
+    {% include 'menu/includes/inc_pagination.html' %}
 </div>
-
 {% endblock %}
