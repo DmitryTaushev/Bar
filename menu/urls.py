@@ -3,13 +3,13 @@ from menu.apps import MenuConfig
 from django.views.decorators.cache import cache_page, never_cache
 
 from menu.models import DrinkAndDish
-from menu.views import index_view,CategoryListView,DrinkAndDishCategoryListView,DrinkAndDishListView,DrinkAndDishCreateView
+from menu.views import IndexListView,CategoryListView,DrinkAndDishCategoryListView,DrinkAndDishListView,DrinkAndDishCreateView
 
 app_name = MenuConfig.name
 
 urlpatterns = [
     # category
-    path('',index_view, name='index'),
+    path('',IndexListView.as_view(), name='index'),
     path('category/', CategoryListView.as_view(), name='categories'),
     # menu
 

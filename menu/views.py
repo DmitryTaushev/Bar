@@ -13,13 +13,13 @@ from menu.models import Category, DrinkAndDish
 from menu.forms import CategoryForm,DrinkAndDishForm
 from users.models import UserRoles
 
-def index_view(request):
-    context = {
-        'object_list': Category.objects.all(),
-        'title': 'КрепкоеХмельное-Ассортимент'
+class IndexListView(ListView):
+    model = Category
+    extra_context = {
+        'title': 'Ассортимент'
     }
-
-    return render(request, 'menu/index.html', context=context)
+    template_name = 'menu/index.html'
+    paginate_by = 3
 
 class CategoryListView(ListView):
     model = Category
