@@ -1,15 +1,16 @@
 {% extends 'menu/base.html' %}
 {% block content %}
 <form method="post" enctype="multipart/form-data" class = "row">
+    <div class="col-3"></div>
     <div class = "col-6">
-        <div class = "card">
+        <div class = "card" style="height: 500px">
             <div class = "card-header">
                 Введите данные напитка или блюда
             </div>
-            <div class = "card-body">
+            <div class = "card-body" style="height: 445px">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type = "submit" class = "btn btn-outline-success">
+                <button type = "submit" class = "btn btn-outline-success" style="margin-top: 30px">
                     Добавить
                 </button>
             </div>

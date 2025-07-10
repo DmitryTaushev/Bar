@@ -5,11 +5,12 @@
             <h4 class="my-0 font-weight-normal">{{ object.name }}</h4>
         </div>
         <img class="card-img-top"
-             src="{{ object.photo|drink_media }}" width="300" height="320"
+             src="{{ object.photo|drink_media }}" width="300" height="300"
              alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title pricing-card-title">Цена: {{ object.price }} руб.</h5>
-
+        <a href="#" type="button"
+                       class="btn btn-sm btn-outline-secondary">Выбрать</a>
 
         </div>
     </div>
