@@ -510,14 +510,14 @@ h3 {
 
 /* line 79, ../../Arafath/CL/December/235. Job board/HTML/scss/_btn.scss */
 .boxed-btn3-line {
-  color: #F91842 !important;
+  color: #f60505 !important;
   display: inline-block;
   padding: 14px 31px;
   font-family: "Roboto", sans-serif;
   font-size: 15px;
   font-weight: 500;
   border: 0;
-  border: 1px solid #F91842;
+  border: 1px solid #f60505;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   border-radius: 30px;
@@ -532,16 +532,16 @@ h3 {
 
 /* line 94, ../../Arafath/CL/December/235. Job board/HTML/scss/_btn.scss */
 .boxed-btn3-line:hover {
-  color: #fff !important;
+  color: #f60505 !important;
   border: 1px solid transparent;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#F91842+0,fd8e5e+100 */
-  background: #fdae5c;
+  background: #f60505;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #fdae5c 0%, #fd8e5e 100%);
+  background: -moz-linear-gradient(left, #f60505 0%, #b60202 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #fdae5c 0%, #fd8e5e 100%);
+  background: -webkit-linear-gradient(left, #f60505 0%, #b60202 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #fdae5c 0%, #fd8e5e 100%);
+  background: linear-gradient(to right, #f60505 0%, #b60202 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F91842', endColorstr='#fd8e5e',GradientType=1 );
   /* IE6-9 */

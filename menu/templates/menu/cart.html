@@ -19,7 +19,7 @@
                 <p>Корзина пуста.</p>
                 {% endfor %}
 
-                <p>Счёт: ${{ total_price }}</p>
+                <p>Счёт: {{ total_price }} руб.</p>
 
                 <a href="{% url 'menu:index' %}">Продолжить чек</a>
                 </div>
