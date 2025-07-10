@@ -3,7 +3,7 @@ from menu.apps import MenuConfig
 from django.views.decorators.cache import cache_page, never_cache
 
 from menu.models import DrinkAndDish
-from menu.views import IndexListView,CategoryListView,DrinkAndDishCategoryListView,DrinkAndDishListView,DrinkAndDishCreateView,SearchAllListView
+from menu.views import IndexListView,CategoryListView,DrinkAndDishCategoryListView,DrinkAndDishListView,DrinkAndDishCreateView,SearchAllListView,view_cart,add_to_cart,remove_from_cart
 
 app_name = MenuConfig.name
 
@@ -18,12 +18,8 @@ urlpatterns = [
     path('create/',DrinkAndDishCreateView.as_view(),name='create'),
     path('menu/search_all/',SearchAllListView.as_view(),name='search_result'),
 
-    # path('dogs/', DogListView.as_view(), name='dogs_list'),
-    # path('dogs/deactivated', DogDeactivatedListView.as_view(), name='dogs_deactivated_list'),
-    # path('dogs/search', DogSearchListView.as_view(), name='dog_search'),
-    # path('dogs/create', DogCreateView.as_view(), name='dog_create'),
-    # path('dogs/detail/<int:pk>/', DogDetailView.as_view(), name='dog_detail'),
-    # path('dogs/update/<int:pk>/', never_cache(DogUpdateView.as_view()), name='dog_update'),
-    # path('dogs/toggle/<int:pk>/', dog_toggle_activity, name='dog_toggle_activity'),
-    # path('dogs/delete/<int:pk>/', DogDeleteView.as_view(), name='dog_delete')
+    path('cart/', view_cart, name='view_cart'),
+    path('add/<int:pk>/', add_to_cart, name='add_to_cart'),
+    path('remove/<int:pk>/', remove_from_cart, name='remove_from_cart')
+
 ]

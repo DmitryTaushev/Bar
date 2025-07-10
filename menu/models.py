@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
-from users.models import NULLABLE
+
+from users.models import User,NULLABLE
 
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name='Категория')
@@ -26,5 +27,13 @@ class DrinkAndDish(models.Model):
         verbose_name = 'drinkanddish'
         verbose_name_plural = 'drinksanddishes'
 
+class CartItem(models.Model):
+    product = models.ForeignKey(DrinkAndDish, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=0)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL,**NULLABLE)
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.quantity} x {self.product.name}'
 
 

@@ -1,0 +1,29 @@
+{% extends 'menu/base.html' %}
+{% load my_tags %}
+{% block content %}
+
+<div class="row">
+    <div class="col-3"></div>
+        <div class="col-6">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Корзина</h4>
+                </div>
+                <div class="card-body">
+                    {% for item in cart_items %}
+                <p>{{ item.product.name }} ({{ item.quantity }})</p>
+                <p>Цена: {{ item.product.price }} руб.</p>
+                <a href="{% url 'menu:remove_from_cart' item.id %}">Удалить</a>
+
+                {% empty %}
+                <p>Корзина пуста.</p>
+                {% endfor %}
+
+                <p>Счёт: ${{ total_price }}</p>
+
+                <a href="{% url 'menu:index' %}">Продолжить чек</a>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}

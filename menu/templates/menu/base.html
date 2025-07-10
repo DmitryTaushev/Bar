@@ -70,6 +70,9 @@
                                                 </ul>
                                             </li>
                                             <li><a href="{% url 'reviews:reviews_list' %}">Наши отзывы</a></li>
+                                            {% if user.is_authenticated %}
+                                            <li><a href="{% url 'menu:view_cart' %}">Корзина</a></li>
+                                            {% endif %}
                                         </ul>
                                     </nav>
                                 </div>

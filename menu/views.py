@@ -1,3 +1,5 @@
+from itertools import product
+
 from django.shortcuts import render, get_object_or_404, redirect
 # from django.template.context_processors import request
 # from django.http import Http404
@@ -9,7 +11,7 @@ from django.forms import inlineformset_factory
 from django.core.exceptions import PermissionDenied
 from django.db.models import Q
 
-from menu.models import Category, DrinkAndDish
+from menu.models import Category, DrinkAndDish,CartItem
 from menu.forms import CategoryForm,DrinkAndDishForm
 from users.models import UserRoles
 
@@ -71,3 +73,23 @@ class SearchAllListView(LoginRequiredMixin,ListView):
         )
         object_list =list(drinkanddish_object_list)
         return object_list
+
+
+
+def view_cart(request):
+    cart_items = CartItem.objects.filter(user=request.user)
+    total_price = sum(item.product.price * item.quantity for item in cart_items)
+    return render(request, 'menu/cart.html', {'cart_items': cart_items, 'total_price': total_price})
+
+def add_to_cart(request, pk:int):
+    product = DrinkAndDish.objects.get(pk=pk)
+    cart_item, created = CartItem.objects.get_or_create(product=product,
+                                                       user=request.user)
+    cart_item.quantity += 1
+    cart_item.save()
+    return redirect('menu:view_cart')
+
+def remove_from_cart(request, pk:int):
+    cart_item = CartItem.objects.get(pk=pk)
+    cart_item.delete()
+    return redirect('menu:view_cart')

@@ -1,0 +1,16 @@
+{% load my_tags %}
+
+    <div class="product-item">
+        <p>{{ object.product.name }} ({{ object.quantity }})</p>
+        <p>Price: ${{ object.product.price }}</p>
+        <a href="{% url 'menu:remove_from_cart' item.id %}">Удалить</a>
+    </div>
+    {% empty %}
+    <p>Корзина пуста.</p>
+    {% endfor %}
+
+    </div>
+
+    <p>Total Price: ${{ total_price }}</p>
+
+    <a href="{% url 'menu:index' %}">Продолжить чек</a>

@@ -27,6 +27,15 @@
     }
   },
   {
+    "model": "menu.category",
+    "pk": 4,
+    "fields": {
+      "name": "Закуски",
+      "description": "Закуски",
+      "photo": "drinks/zakus.jfif"
+    }
+  },
+  {
     "model": "menu.drinkanddish",
     "pk": 1,
     "fields": {
@@ -65,5 +74,25 @@
       "photo": "drinks/cheese_4Zmr4ze.jpg",
       "price": 500
     }
+  },
+  {
+    "model": "menu.drinkanddish",
+    "pk": 5,
+    "fields": {
+      "name": "Тарталетки с икрой",
+      "category": 4,
+      "photo": "drinks/tartar.jfif",
+      "price": 500
+    }
+  },
+  {
+    "model": "menu.drinkanddish",
+    "pk": 6,
+    "fields": {
+      "name": "Лонг-Айленд",
+      "category": 1,
+      "photo": "drinks/long-island_KAlkgt8.jfif",
+      "price": 700
+    }
   }
-]
+  ]

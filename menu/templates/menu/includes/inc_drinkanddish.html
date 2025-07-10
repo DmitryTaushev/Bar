@@ -9,7 +9,7 @@
              alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title pricing-card-title">Цена: {{ object.price }} руб.</h5>
-        <a href="#" type="button"
+        <a href="{% url 'menu:add_to_cart' object.pk %}" type="button"
                        class="btn btn-sm btn-outline-secondary">Выбрать</a>
 
         </div>
