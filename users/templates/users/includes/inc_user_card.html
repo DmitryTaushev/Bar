@@ -1,11 +1,11 @@
 {% load my_tags %}
-<div class="col-4">
+<div class="col-md-4">
     <div class="card mb-4 box-shadow">
         <div class="card-header">
             <h4 class="my-0 font-weight-normal">{{ object.first_name }}</h4>
         </div>
-        <img class="card-img-top"
-             src="{{ object.avatar|user_media }}" width="300" height="170"
+        <img style="margin-left: 90px"
+             src="{{ object.avatar|user_media }}" width="150" height="150"
              alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title-pricing-card-title">{{ object.first_name }} {{ object.last_name }}</h5>

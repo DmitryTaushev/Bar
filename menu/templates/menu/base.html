@@ -53,7 +53,7 @@
                                     <nav>
                                         <ul id="navigation">
 
-                                            <li><a href="{% url 'menu:all' %}">Ассортимент</a></li>
+
                                             {% if user.role == 'admin' %}
                                             <li><a href="#">Для админа <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
@@ -63,16 +63,18 @@
                                                 </ul>
                                             </li>
                                             {% endif %}
-                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                            <li><a href="#">Ассортимент<i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                    <li><a href="blog.html">blog</a></li>
-                                                    <li><a href="single-blog.html">single-blog</a></li>
+                                                    <li><a href="{% url 'menu:index' %}">Категории</a></li>
+                                                    <li><a href="{% url 'menu:all' %}">Весь ассортимент</a></li>
                                                 </ul>
                                             </li>
+
                                             <li><a href="{% url 'reviews:reviews_list' %}">Наши отзывы</a></li>
                                             {% if user.is_authenticated %}
                                             <li><a href="{% url 'menu:view_cart' %}">Корзина</a></li>
                                             {% endif %}
+                                            {% include 'menu/includes/inc_search_field.html' %}
                                         </ul>
                                     </nav>
                                 </div>
@@ -133,189 +135,14 @@
     </div>
     <!-- slider_area_end -->
 
-    <!-- job_searcing_wrap  -->
-    <div class="job_searcing_wrap overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 offset-lg-1 col-md-6">
-                    <div class="searching_text">
-                        <h3>Looking for a Job?</h3>
-                        <p>We provide online instant cash loans with quick approval </p>
-                        <a href="#" class="boxed-btn3">Browse Job</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 offset-lg-1 col-md-6">
-                    <div class="searching_text">
-                        <h3>Looking for a Expert?</h3>
-                        <p>We provide online instant cash loans with quick approval </p>
-                        <a href="#" class="boxed-btn3">Post a Job</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- job_searcing_wrap end  -->
 
-    <!-- testimonial_area  -->
-    <div class="testimonial_area  ">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title text-center mb-40">
-                        <h3>Testimonial</h3>
-                    </div>
-                </div>
-                <div class="col-xl-12">
-                    <div class="testmonial_active owl-carousel">
-                        <div class="single_carousel">
-                            <div class="row">
-                                <div class="col-lg-11">
-                                    <div class="single_testmonial d-flex align-items-center">
-                                        <div class="thumb">
-                                            <img src="img/testmonial/author.png" alt="">
-                                            <div class="quote_icon">
-                                                <i class="Flaticon flaticon-quote"></i>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering through animal welfare when people might depend on livestock as their only source of income or food.</p>
-                                            <span>- Micky Mouse</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_carousel">
-                            <div class="row">
-                                <div class="col-lg-11">
-                                    <div class="single_testmonial d-flex align-items-center">
-                                        <div class="thumb">
-                                            <img src="img/testmonial/author.png" alt="">
-                                            <div class="quote_icon">
-                                                <i class=" Flaticon flaticon-quote"></i>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering through animal welfare when people might depend on livestock as their only source of income or food.</p>
-                                            <span>- Micky Mouse</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_carousel">
-                            <div class="row">
-                                <div class="col-lg-11">
-                                    <div class="single_testmonial d-flex align-items-center">
-                                        <div class="thumb">
-                                            <img src="img/testmonial/author.png" alt="">
-                                            <div class="quote_icon">
-                                                <i class="Flaticon flaticon-quote"></i>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering through animal welfare when people might depend on livestock as their only source of income or food.</p>
-                                            <span>- Micky Mouse</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /testimonial_area  -->
+
+
 
 
     <!-- footer start -->
     <footer class="footer">
-        <div class="footer_top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                            <div class="footer_logo">
-                                <a href="#">
-                                    <img src="img/logo.png" alt="">
-                                </a>
-                            </div>
-                            <p>
-                                finloan@support.com <br>
-                                +10 873 672 6782 <br>
-                                600/D, Green road, NewYork
-                            </p>
-                            <div class="socail_links">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
 
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget wow fadeInUp" data-wow-duration="1.1s" data-wow-delay=".4s">
-                            <h3 class="footer_title">
-                                Company
-                            </h3>
-                            <ul>
-                                <li><a href="#">About </a></li>
-                                <li><a href="#"> Pricing</a></li>
-                                <li><a href="#">Carrier Tips</a></li>
-                                <li><a href="#">FAQ</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".5s">
-                            <h3 class="footer_title">
-                                Category
-                            </h3>
-                            <ul>
-                                <li><a href="#">Design & Art</a></li>
-                                <li><a href="#">Engineering</a></li>
-                                <li><a href="#">Sales & Marketing</a></li>
-                                <li><a href="#">Finance</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6 col-lg-4">
-                        <div class="footer_widget wow fadeInUp" data-wow-duration="1.3s" data-wow-delay=".6s">
-                            <h3 class="footer_title">
-                                Subscribe
-                            </h3>
-                            <form action="#" class="newsletter_form">
-                                <input type="text" placeholder="Enter your mail">
-                                <button type="submit">Subscribe</button>
-                            </form>
-                            <p class="newsletter_text">Esteem spirit temper too say adieus who direct esteem esteems
-                                luckily.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="copy-right_text wow fadeInUp" data-wow-duration="1.4s" data-wow-delay=".3s">
             <div class="container">
                 <div class="footer_border"></div>
@@ -323,7 +150,7 @@
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>

@@ -14,7 +14,7 @@ def category_media(val):
 def user_media(val):
     if val:
         return f'/media/{val}'
-    return '/static/noavatar.png'
+    return '/static/inkognito.jfif'
 
 @register.filter()
 def drink_media(val):

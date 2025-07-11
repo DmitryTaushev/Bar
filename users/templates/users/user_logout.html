@@ -1,7 +1,8 @@
 {% extends 'menu/base.html' %}
 {% block content %}
-<h1>Вы успешно вышли из вашего аккаунта</h1>
-<p>Спасибо за использование нашего сервиса</p>
+<div class="container" style="height: 350px">
+<h1 style="margin-top: 150px">Вы успешно вышли из вашего аккаунта</h1>
+<p style="color:black">Спасибо за использование нашего сервиса</p>
 <a href="{% url 'users:user_login' %}">Нажмите сюда чтобы снова войти</a>
-
+</div>
 {% endblock %}
