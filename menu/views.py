@@ -31,7 +31,7 @@ class CategoryListView(ListView):
     template_name = 'menu/category.html'
     paginate_by = 3
 
-class DrinkAndDishCategoryListView(LoginRequiredMixin, ListView):
+class DrinkAndDishCategoryListView(ListView):
     model = DrinkAndDish
     template_name = 'menu/drinksanddishes.html'
     extra_context = {
@@ -42,7 +42,7 @@ class DrinkAndDishCategoryListView(LoginRequiredMixin, ListView):
         queryset = super().get_queryset().filter(category_id=self.kwargs.get('pk'))
         return queryset
 
-class DrinkAndDishListView(LoginRequiredMixin, ListView):
+class DrinkAndDishListView(ListView):
     model = DrinkAndDish
     template_name = 'menu/drinksanddishes.html'
     extra_context = {
@@ -59,7 +59,7 @@ class DrinkAndDishCreateView(LoginRequiredMixin, CreateView):
     }
     success_url = reverse_lazy('menu:all')
 
-class SearchAllListView(LoginRequiredMixin,ListView):
+class SearchAllListView(ListView):
     model = DrinkAndDish
     template_name = 'menu/all_search_result.html'
     extra_context = {

@@ -9,9 +9,10 @@
              alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title pricing-card-title">Цена: {{ object.price }} руб.</h5>
-        <a href="{% url 'menu:add_to_cart' object.pk %}" type="button"
+            {% if user.is_authenticated %}
+            <a href="{% url 'menu:add_to_cart' object.pk %}" type="button"
                        class="btn btn-sm btn-outline-secondary">Выбрать</a>
-
+            {% endif %}
         </div>
     </div>
 </div>

@@ -9,8 +9,11 @@
         {% endfor %}
     </div>
     <a href="{% url 'reviews:reviews_create' %}" class="boxed-btn3 float-left">Добавить отзыв</a>
+    {% if user.role == 'admin' %}
     <a href="{% url 'reviews:reviews_deactivated_list' %}" class="boxed-btn3-line float-right">Неактивные отзывы</a>
+
     <a href="{% url 'reviews:reviews_list' %}" class="boxed-btn3 float-right">Активные отзывы</a>
+    {% endif %}
 {% include 'menu/includes/inc_pagination.html' %}
 </div>
 

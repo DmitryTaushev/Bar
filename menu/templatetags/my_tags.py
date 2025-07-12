@@ -7,7 +7,7 @@ register = template.Library()
 def category_media(val):
     if val:
         return fr'/media/{val}'
-    return '/static/dummydog.jpg'
+    return '/static/nodishes.png'
 
 
 @register.filter()
@@ -20,4 +20,4 @@ def user_media(val):
 def drink_media(val):
     if val:
         return fr'/media/{val}'
-    return '/static/dummydog.jpg'
+    return '/static/nodishes.png'

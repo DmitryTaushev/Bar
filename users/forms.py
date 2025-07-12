@@ -25,7 +25,7 @@ class UserRegisterForm(StyleFormMixin, UserCreationForm):
 class UserUpdateForm(StyleFormMixin, forms.ModelForm):
     class Meta:
         model = User
-        fields = ('email', 'first_name', 'last_name', 'phone', 'telegram', 'avatar')
+        fields = ( 'first_name', 'last_name', 'phone', 'avatar')
 
     def clean_password2(self):
         cleaned_data = self.cleaned_data
