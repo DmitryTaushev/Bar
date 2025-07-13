@@ -36,6 +36,15 @@
     }
   },
   {
+    "model": "menu.category",
+    "pk": 5,
+    "fields": {
+      "name": "Разное",
+      "description": "Разные блюда",
+      "photo": ""
+    }
+  },
+  {
     "model": "menu.drinkanddish",
     "pk": 1,
     "fields": {
@@ -94,5 +103,15 @@
       "photo": "drinks/long-island_KAlkgt8.jfif",
       "price": 700
     }
+  },
+  {
+    "model": "menu.drinkanddish",
+    "pk": 7,
+    "fields": {
+      "name": "Май Тай",
+      "category": 1,
+      "photo": "",
+      "price": 500
+    }
   }
-  ]
+]
